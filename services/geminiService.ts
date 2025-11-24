@@ -72,7 +72,7 @@ const extractSources = (groundingChunks: any[]): GroundingSource[] => {
 export const analyzeStock = async (ticker: string): Promise<SingleAnalysisResult> => {
   if (!process.env.API_KEY) throw new Error("API Key is missing");
 
-  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+  const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_API_KEY });
   const model = "gemini-2.5-flash";
   const daysToFetch = 30; // Increased for better data
   const smaPeriod = 5;
@@ -113,7 +113,7 @@ export const analyzeStock = async (ticker: string): Promise<SingleAnalysisResult
 export const compareStocks = async (ticker1: string, ticker2: string): Promise<ComparisonResult> => {
   if (!process.env.API_KEY) throw new Error("API Key is missing");
 
-  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+  const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_API_KEY});
   const model = "gemini-2.5-flash";
   const daysToFetch = 30;
 
