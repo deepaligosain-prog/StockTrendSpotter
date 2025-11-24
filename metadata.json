@@ -1,0 +1,4 @@
+{
+  "name": "TrendSpotter",
+  "description": "A real-time stock trend analyzer using Gemini and Google Search to visualize price history and simple moving averages."
+}
